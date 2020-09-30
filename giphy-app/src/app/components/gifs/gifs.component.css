@@ -1,3 +1,6 @@
+.container{
+    margin: 0, auto;
+}
 .container .slick-item {
     transition: all 0.3s ease;
     margin-left: 4%;
