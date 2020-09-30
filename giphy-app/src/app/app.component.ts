@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'giphy-app';
+
+  sliderConfig = {
+    slidesToShow: 6,
+    slideToScroll: 2,
+    arrows: true,
+    autoplay: false
+  };
+
 }
