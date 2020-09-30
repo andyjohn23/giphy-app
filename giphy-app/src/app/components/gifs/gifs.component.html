@@ -4,7 +4,7 @@
             <img src="assets/fire.png" class="trend" alt="trend"><h1>Trending</h1>
             <div *ngFor="let gif of gifs">
                 <div class="slick-item">
-                    <img src="{{gif.image}}" alt="gifs">
+                    <img [src]="gif.images.downsized_medium.url" alt="gifs">
                 </div>
             </div>
         </div>

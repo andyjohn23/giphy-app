@@ -1,0 +1,33 @@
+.container .search-bar input{
+    width: 85%;
+    height: 60px;
+    margin-left: 33px;
+    padding-left: 15px;
+    font-size: 17px;
+    outline: none;
+    border: none;
+    float: left;
+}
+.container .search-bar button{
+    max-width: 100%;
+    height: 60px;
+    width: 70px;
+    border: none;
+    outline: none;
+    padding: 6px 10px;
+}
+.container .fa-search{
+    font-size: 25px;
+    color: white;
+}
+.container #color-change{
+    height: 60px;
+    width: 70px;
+    background: red;
+    animation: mymove 5s infinite;
+}
+  
+  @keyframes mymove {
+    from {background-color: #F307E3;}
+    to {background-color: #F30795;}
+}

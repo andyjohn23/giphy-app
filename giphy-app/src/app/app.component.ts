@@ -7,11 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  sliderConfig = {
-    slidesToShow: 6,
-    slideToScroll: 2,
-    arrows: true,
-    autoplay: false
-  };
 
 }

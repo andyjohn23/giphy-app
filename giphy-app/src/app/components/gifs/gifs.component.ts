@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -8,44 +8,19 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class GifsComponent implements OnInit {
 
-  @Input() sliderConfig;
+  constructor(private dataService: DataService) { }
 
-  gifs;
-  loading: boolean;
+  gifs: any[] = [];
 
-  constructor(private dataservice: DataService) { }
-
-  ngOnInit() {
-  this.getGifs()
+  ngOnInit(): void {
+    this.dataService.getTrendingGifs()
+      .subscribe((response: any) => {
+        console.log(response.data)
+        this.gifs = response.data;
+      },
+        (error) => {
+          console.log(error)
+        }
+      )
   }
-
-  getImages(response){
-  
-    let imagesArray = []
-    response.forEach(element => {
-      imagesArray.push({ 
-        title: element.title,
-        username: element.username,
-        image: element.images.downsized_medium.url})
-    });
-   
-   return imagesArray
-  }
-
-  getGifs():void {
-    this.loading = true;
-    this.dataservice.getTrendingGifs().subscribe(
-    
-      (response) => {      
-        console.log(response.data) 
-        const imageArray = response.data && this.getImages(response.data); 
-        this.loading=false;
-        this.gifs = imageArray
-      }, 
-      (error) => {
-        console.log(error)
-      }
-    )
-  }
-
 }

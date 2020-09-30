@@ -1,10 +1,10 @@
 .container .slick-item {
     transition: all 0.3s ease;
-    margin-left: 5%;
+    margin-left: 3.5%;
     margin-top: 2%;
 }
 .container .slick-item:hover {
-    transform: scaleY(1.02) scaleX(1.02);
+    transform: scale(1.02);
     cursor: pointer;
 }
 .gifs img{
@@ -12,6 +12,7 @@
     width:  240px;
     height: 200px;
     object-fit: fill;
+    margin: 4px;
 }
 .container h1{
     color: white;

@@ -1,22 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  trendingGifUrl = `${environment.gifUrl}/trending`;
-  searchGifUrl = `${environment.gifUrl}/search`;
-  apiKey = `${environment.giphyApiKey}`
-  limit = 4
-  finalUrl = `${this.trendingGifUrl}?api_key=${this.apiKey}&limit=${this.limit}/`;
 
+  private URL= 'https://api.giphy.com/v1/gifs/trending'
+  private searchUrl='https://api.giphy.com/v1/gifs/search'
+  private api_key=environment.giphyApiKey
+  private Limit=48
   constructor(private http: HttpClient) { }
 
-  getTrendingGifs(): Observable<any> {
-    console.log(this.finalUrl)
-    return this.http.get(this.finalUrl)
+  getTrendingGifs(){
+    return this.http.get(`${this.URL}?api_key=${this.api_key}&limit=${this.Limit}`)
+  }
+
+  searchGifs(){
+    return this.http.get(`${this.searchUrl}?api_key=${this.api_key}&limit=${this.Limit}`)
   }
 }
+
