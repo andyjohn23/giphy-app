@@ -57,8 +57,8 @@
 }
 .container .dropdown button{
     border-style: none !important;
-    font-size: 15px !important;
-    width: 150px;
+    font-size: 13px !important;
+    width: 120px;
     height: 40px;
     box-shadow: none;
 }
@@ -67,4 +67,12 @@
 }
 .container .dropdown-item:hover{
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)) !important;
+}
+.container .active{
+    margin-top: -2px;
+    margin-left: 6px;
+    border-bottom:4px solid #4C8A65;
+}
+.container .active:hover{
+    background-color:#2C4770;
 }
