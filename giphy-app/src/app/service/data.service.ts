@@ -15,7 +15,7 @@ export class DataService {
   private searchUrl='https://api.giphy.com/v1/gifs/search'
   private api_key=environment.giphyApiKey
   private Limit=48
-  
+
   constructor(private http: HttpClient) { }
 
   getTrendingGifs(){
@@ -25,8 +25,8 @@ export class DataService {
     })
   }
 
-  searchGifs(gifName: string){
-    return this.http.get(`${this.searchUrl}?q=${gifName}api_key=${this.api_key}&limit=${this.Limit}`)
+  searchGifs(gifName){
+    return this.http.get(`${this.searchUrl}?q=${gifName}&api_key=${this.api_key}&limit=${this.Limit}`)
     .subscribe((response: any) => {
       this.gifs.next(response.data);
     })
