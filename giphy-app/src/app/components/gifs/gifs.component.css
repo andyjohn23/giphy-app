@@ -1,14 +1,10 @@
 .container {
   margin: 0, auto;
 }
-/* .container .slick-item {
-  transition: all 0.3s ease;
-  margin-left: 4%;
-  margin-top: 2%;
-} */
 .container .gifs img:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
   cursor: pointer;
+  transition: 0.4s ease-in-out;
 }
 .gifs img {
   width: 240px;
@@ -21,6 +17,9 @@
   font-size: 30px;
   margin-top: 5%;
 }
+.container .trending {
+  display: flex;
+}
 .container .trend {
   width: 50px;
   height: 50px;
@@ -28,7 +27,7 @@
   margin-top: 4.5%;
   margin-left: 5%;
 }
-.gifs-images{
+.gifs-images {
   margin-left: 2rem;
   display: inline-grid;
   grid-template-columns: repeat(4, 1fr);

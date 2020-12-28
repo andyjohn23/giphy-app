@@ -1,7 +1,9 @@
 <div class="container">
+    <div class="trending">
+        <img src="assets/fire.png" class="trend" alt="trend">
+        <h1>Trending</h1>
+    </div>
     <div class="gifs gifs-images">
-        <!-- <img src="assets/fire.png" class="trend" alt="trend">
-        <h1>Trending</h1> -->
         <div *ngFor="let gif of gifs">
             <img [src]="gif.images.downsized.url" alt="gifs">
         </div>
